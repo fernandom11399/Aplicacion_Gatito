@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main2Activity"
+    android:background="#FFFFFF">
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='El gatito "The game"'
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/logo"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/gato1"
+            />
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="50dp"
+            />
+        <TextView
+            android:layout_marginTop="60dp"
+            android:id="@+id/contadoramarillo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="VS"
+            android:textSize="45dp"
+            android:textColor="@color/black"
+            />
+        <View
+            android:layout_width="15dp"
+            android:layout_height="50dp"
+            />
+
+        <ImageView
+             android:layout_width="150dp"
+             android:layout_height="150dp"
+             android:src="@drawable/gato2"
+             />
+
+
+    </LinearLayout>
+
+    <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:id="@+id/gatogirando"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/gatogirando"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

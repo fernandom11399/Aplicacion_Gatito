@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#FFFFFF">
+
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/gatito"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       android:background="@color/black"
+       >
+       <Button
+           android:id="@+id/primero"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           android:background="@drawable/recuadros"
+           android:text="."
+           android:backgroundTint="@color/white"
+           android:textSize="30sp"
+           />
+
+       <Button
+           android:id="@+id/segundo"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toEndOf="@+id/primero"
+           app:layout_constraintTop_toTopOf="parent"
+           android:background="@drawable/recuadros"
+           android:layout_marginStart="6dp"
+           android:text="."
+           android:textSize="30sp"
+           android:backgroundTint="@color/white"
+           />
+
+       <Button
+           android:backgroundTint="@color/white"
+           android:id="@+id/tercero"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toEndOf="@+id/segundo"
+           app:layout_constraintTop_toTopOf="parent"
+           android:background="@drawable/recuadros"
+           android:layout_marginStart="6dp"
+           android:text="."
+           android:textSize="30sp"
+
+           />
+
+       <Button
+           android:backgroundTint="@color/white"
+           android:id="@+id/cuarto"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/primero"
+           android:background="@drawable/recuadros"
+           android:layout_marginTop="6dp"
+           android:text="."
+           android:textSize="30sp"
+           />
+
+       <Button
+           android:backgroundTint="@color/white"
+           android:id="@+id/quinto"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toEndOf="@+id/cuarto"
+           app:layout_constraintTop_toBottomOf="@+id/segundo"
+           android:background="@drawable/recuadros"
+           android:layout_marginStart="6dp"
+           android:layout_marginTop="6dp"
+           android:text="."
+           android:textSize="30sp"
+           />
+
+       <Button
+           android:backgroundTint="@color/white"
+           android:id="@+id/sexto"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toEndOf="@+id/quinto"
+           app:layout_constraintTop_toBottomOf="@+id/tercero"
+           android:background="@drawable/recuadros"
+           android:layout_marginStart="6dp"
+           android:layout_marginTop="6dp"
+           android:text="."
+           android:textSize="30sp"
+           />
+
+       <Button
+           android:backgroundTint="@color/white"
+           android:id="@+id/septimo"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/cuarto"
+           android:layout_marginTop="6dp"
+           android:background="@drawable/recuadros"
+           android:text="."
+           android:textSize="30sp"
+           />
+
+       <Button
+           android:backgroundTint="@color/white"
+           android:id="@+id/octavo"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toEndOf="@+id/septimo"
+           app:layout_constraintTop_toBottomOf="@+id/quinto"
+           android:layout_marginTop="5dp"
+           android:background="@drawable/recuadros"
+           android:layout_marginStart="6dp"
+           android:text="."
+           android:textSize="30sp"
+           />
+
+       <Button
+           android:backgroundTint="@color/white"
+           android:id="@+id/noveno"
+           android:layout_width="70dp"
+           android:layout_height="70dp"
+           app:layout_constraintStart_toEndOf="@+id/octavo"
+           app:layout_constraintTop_toBottomOf="@+id/sexto"
+           android:layout_marginTop="5dp"
+           android:background="@drawable/recuadros"
+           android:layout_marginStart="6dp"
+           android:text="."
+           android:textSize="30sp"
+           />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/gatitoamarillo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gatito"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Ganó el gato amarrillo, ganaron las X"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        />
+    <TextView
+        android:id="@+id/gatitonegro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gatito"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Ganó el gato negro, ganaron las ⊘"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        />
+    <TextView
+        android:id="@+id/nadie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gatito"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Ningún gatito ganó :("
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        />
+    <Button
+        android:id="@+id/reinicarronda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Reiniciar Ronda"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="100dp"
+        />
+
+    <Button
+        android:id="@+id/reinicartodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/reinicarronda"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Reinicar Partida"
+        android:layout_marginTop="100dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
