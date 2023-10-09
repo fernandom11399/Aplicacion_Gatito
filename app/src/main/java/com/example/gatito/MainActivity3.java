@@ -12,8 +12,8 @@ public class MainActivity3 extends AppCompatActivity {
 
     TextView contadoramarillo;
     TextView contadornegro;
-    int amarillo;
-    int negro;
+    int amarillocontador;
+    int negrocontador;
     Button regresar;
 
     @Override
@@ -29,20 +29,20 @@ public class MainActivity3 extends AppCompatActivity {
         Bundle bundled = getIntent().getExtras();
 
         if (bundled != null) {
-            amarillo = bundled.getInt("amarillocontador");
-            negro = bundled.getInt("negrocontador");
+            amarillocontador = bundled.getInt("amarillocontador");
+            negrocontador = bundled.getInt("negrocontador");
         }
 
-        contadoramarillo.setText(String.valueOf(amarillo));
-        contadornegro.setText(String.valueOf(negro));
+        contadoramarillo.setText(String.valueOf(amarillocontador));
+        contadornegro.setText(String.valueOf(negrocontador));
 
         regresar = findViewById(R.id.jugardenuevo);
 
         regresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bundle.putInt("amarillocontador", amarillo);
-                bundle.putInt("negrocontador", negro);
+                bundle.putInt("amarillocontador", amarillocontador);
+                bundle.putInt("negrocontador", negrocontador);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

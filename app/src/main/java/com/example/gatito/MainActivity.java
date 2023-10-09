@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
     boolean nadie = false;
     boolean turnoamarillo = true;
     boolean turnonegro = false;
-    int amarillocontador;
-    int negrocontador;
+    int amarillocontador = 0;
+    int negrocontador = 0;
 
 
 
@@ -56,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Intent i = new Intent(this, MainActivity3.class);
         Bundle b = new Bundle();
+        Bundle bundled = getIntent().getExtras();
 
-        if (b != null) {
-            amarillocontador = b.getInt("amarillocontador");
-            negrocontador = b.getInt("negrocontador");
+        if (bundled != null) {
+            amarillocontador = bundled.getInt("amarillocontador");
+            negrocontador = bundled.getInt("negrocontador");
         }
 
         reinicartodo = findViewById(R.id.reinicartodo);
@@ -89,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 gandorx = false;
                 gandoro = false;
                 nadie = false;
-                contadoramarillo = 0;
-                contadornegro = 0;
+                amarillocontador = 0;
+                negrocontador = 0;
             }
         });
 
@@ -151,54 +152,35 @@ public class MainActivity extends AppCompatActivity {
                 if(casill1.equals("x") && casill2.equals("x") && casill3.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
-                    b.putInt("amarillocontador", amarillocontador);
                     amarillocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill1.equals("x") && casill4.equals("x") && casill7.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
-                    b.putInt("amarillocontador", amarillocontador);
                     amarillocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill1.equals("x") && casill5.equals("x") && casill9.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
-                    b.putInt("amarillocontador", amarillocontador);
                     amarillocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill1.equals("⊘") && casill4.equals("⊘") && casill7.equals("⊘")){
                     gandoro = true;
-                    negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill1.equals("⊘") && casill5.equals("⊘") && casill9.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
                 }
                 if(casill1.equals("⊘") && casill2.equals("⊘") && casill3.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
@@ -245,9 +227,14 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
+
 
 
 
@@ -277,35 +264,21 @@ public class MainActivity extends AppCompatActivity {
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill2.equals("x") && casill5.equals("x") && casill8.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill1.equals("⊘") && casill2.equals("⊘") && casill3.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
                 }
                 if(casill2.equals("⊘") && casill5.equals("⊘") && casill8.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
                 }
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
                         !unavez6 && !unavez7 && !unavez8 && !unavez9)){
@@ -352,6 +325,10 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
@@ -383,55 +360,31 @@ public class MainActivity extends AppCompatActivity {
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill3.equals("x") && casill6.equals("x") && casill9.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill7.equals("x") && casill5.equals("x") && casill3.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill1.equals("⊘") && casill2.equals("⊘") && casill3.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill9.equals("⊘") && casill6.equals("⊘") && casill3.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill7.equals("⊘") && casill5.equals("⊘") && casill3.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
                         !unavez6 && !unavez7 && !unavez8 && !unavez9)){
@@ -477,6 +430,10 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
@@ -506,37 +463,22 @@ public class MainActivity extends AppCompatActivity {
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill5.equals("x") && casill4.equals("x") && casill6.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill1.equals("⊘") && casill4.equals("⊘") && casill7.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill4.equals("⊘") && casill5.equals("⊘") && casill6.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
 
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
@@ -583,6 +525,10 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
@@ -616,71 +562,42 @@ public class MainActivity extends AppCompatActivity {
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill1.equals("x") && casill5.equals("x") && casill9.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill4.equals("x") && casill5.equals("x") && casill6.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill2.equals("x") && casill5.equals("x") && casill8.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill3.equals("⊘") && casill5.equals("⊘") && casill7.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill1.equals("⊘") && casill5.equals("⊘") && casill9.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill4.equals("⊘") && casill5.equals("⊘") && casill6.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
                 }
                 if(casill2.equals("⊘") && casill5.equals("⊘") && casill8.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
@@ -727,6 +644,10 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
@@ -756,35 +677,22 @@ public class MainActivity extends AppCompatActivity {
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill3.equals("x") && casill6.equals("x") && casill9.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill4.equals("⊘") && casill5.equals("⊘") && casill6.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
                 }
                 if(casill3.equals("⊘") && casill6.equals("⊘") && casill9.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
                 }
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
                         !unavez6 && !unavez7 && !unavez8 && !unavez9)){
@@ -831,6 +739,10 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
@@ -862,54 +774,32 @@ public class MainActivity extends AppCompatActivity {
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill9.equals("x") && casill8.equals("x") && casill7.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill3.equals("x") && casill5.equals("x") && casill7.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill1.equals("⊘") && casill4.equals("⊘") && casill7.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
-                    negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
-
                 }
                 if(casill9.equals("⊘") && casill8.equals("⊘") && casill7.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill3.equals("⊘") && casill5.equals("⊘") && casill7.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
@@ -956,6 +846,10 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
@@ -985,35 +879,23 @@ public class MainActivity extends AppCompatActivity {
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill2.equals("x") && casill5.equals("x") && casill8.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill7.equals("⊘") && casill8.equals("⊘") && casill9.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
                 }
                 if(casill2.equals("⊘") && casill5.equals("⊘") && casill8.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
                 }
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
                         !unavez6 && !unavez7 && !unavez8 && !unavez9)){
@@ -1060,6 +942,10 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
@@ -1091,54 +977,36 @@ public class MainActivity extends AppCompatActivity {
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill3.equals("x") && casill6.equals("x") && casill9.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill1.equals("x") && casill5.equals("x") && casill9.equals("x")){
                     gandorx = true;
                     amarillo.setVisibility(View.VISIBLE);
                     amarillocontador++;
-                    b.putInt("amarillocontador", amarillocontador);
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill7.equals("⊘") && casill8.equals("⊘") && casill9.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill1.equals("⊘") && casill5.equals("⊘") && casill9.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if(casill3.equals("⊘") && casill6.equals("⊘") && casill9.equals("⊘")){
                     gandoro = true;
                     negro.setVisibility(View.VISIBLE);
-                    b.putInt("negrocontador", negrocontador);
                     negrocontador++;
-                    i.putExtras(b);
-                    startActivity(i);
 
                 }
                 if((!gandoro && !gandorx) && (!unavez1 && !unavez2 && !unavez3 && !unavez4 && !unavez5 &&
@@ -1185,6 +1053,10 @@ public class MainActivity extends AppCompatActivity {
                             gandorx = false;
                             gandoro = false;
                             nadie = false;
+                            b.putInt("amarillocontador", amarillocontador);
+                            b.putInt("negrocontador", negrocontador);
+                            i.putExtras(b);
+                            startActivity(i);
                         }
                     }.start();
                 }
